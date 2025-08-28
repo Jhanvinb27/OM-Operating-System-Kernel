@@ -1,0 +1,5 @@
+#!/bin/bash
+# Creates a bootable floppy image
+dd if=/dev/zero of=floppy.img bs=512 count=2880
+dd if=bootblock of=floppy.img conv=notrunc
+dd if=kernel.img of=floppy.img bs=512 seek=1 conv=notrunc

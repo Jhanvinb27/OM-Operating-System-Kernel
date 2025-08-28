@@ -1,0 +1,19 @@
+CC=i686-elf-gcc
+AS=i686-elf-as
+LD=i686-elf-ld
+CFLAGS=-m32 -ffreestanding -O2 -Wall
+ASFLAGS=-m32
+
+all: kernel.img
+
+kernel.img: entry.o kernel.o scheduler.o util.o sync.o printf.o interrupt.o syslib.o queue.o
+    $(LD) -Ttext 0x1000 -o kernel.img $^
+
+%.o: %.c
+    $(CC) $(CFLAGS) -c $< -o $@
+
+%.o: %.S
+    $(AS) $(ASFLAGS) $< -o $@
+
+clean:
+    rm -f *.o kernel.img

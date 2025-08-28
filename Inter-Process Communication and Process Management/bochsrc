@@ -1,0 +1,8 @@
+# Bochs configuration
+megs: 32
+romimage: file="BIOS-bochs-latest"
+vgaromimage: file="VGABIOS-lgpl-latest"
+boot: disk
+floppya: 1_44=kernel.img, status=inserted
+log: bochs.log
+clock: sync=realtime

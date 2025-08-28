@@ -1,0 +1,4 @@
+# Bochs configuration
+floppya: 1_44=floppy.img, status=inserted
+boot: floppy
+log: bochs.log

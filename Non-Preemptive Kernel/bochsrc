@@ -1,0 +1,4 @@
+megs: 16
+romimage: file="bootloader.img"
+floppya: 1_44="kernel.img", status=inserted
+boot: a

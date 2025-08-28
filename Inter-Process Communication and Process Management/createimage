@@ -1,0 +1,6 @@
+#!/bin/bash
+# Create bootable image
+dd if=/dev/zero of=kernel.img bs=512 count=2880
+dd if=bootblock of=kernel.img conv=notrunc
+dd if=kernel of=kernel.img bs=512 seek=1 conv=notrunc
+echo "Bootable image created"

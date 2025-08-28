@@ -1,0 +1,5 @@
+#!/bin/bash
+# Script to select and run a test
+TEST_NAME=$1
+cp tests/$TEST_NAME/* .
+bochs -f bochsrc
